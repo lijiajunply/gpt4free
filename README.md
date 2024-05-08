@@ -6,7 +6,7 @@ Written by [@xtekky](https://github.com/hlohaus) & maintained by [@hlohaus](http
 
 <div id="top"></div>
 
-> By using this repository or any code related to it, you agree to the [legal notice](LEGAL_NOTICE.md). The author is **not responsible for the usage of this repository nor endorses it**, nor is the author responsible for any copies, forks, re-uploads made by other users, or anything else related to GPT4Free. This is the author's only account and repository. To prevent impersonation or irresponsible actions, please comply with the GNU GPL license this Repository uses.  
+> By using this repository or any code related to it, you agree to the [legal notice](https://github.com/xtekky/gpt4free/blob/main/LEGAL_NOTICE.md). The author is **not responsible for the usage of this repository nor endorses it**, nor is the author responsible for any copies, forks, re-uploads made by other users, or anything else related to GPT4Free. This is the author's only account and repository. To prevent impersonation or irresponsible actions, please comply with the GNU GPL license this Repository uses.  
 
 > [!Warning]
 *"gpt4free"* serves as a **PoC** (proof of concept), demonstrating the development of an API package with multi-provider requests, with features like timeouts, load balance and flow control.
@@ -114,12 +114,12 @@ To ensure the seamless operation of our application, please follow the instructi
 By following these steps, you should be able to successfully install and run the application on your Windows system. If you encounter any issues during the installation process, please refer to our Issue Tracker or try to get contact over Discord for assistance.
 
 Run the **Webview UI** on other Platfroms:
-- [/docs/guides/webview](/docs/webview.md)
+- [/docs/guides/webview](https://github.com/xtekky/gpt4free/blob/main/docs/webview.md)
 
 ##### Use your smartphone:
 
 Run the Web UI on Your Smartphone:
-- [/docs/guides/phone](/docs/guides/phone.md)
+- [/docs/guides/phone](https://github.com/xtekky/gpt4free/blob/main/docs/guides/phone.md)
 
 #### Use python
 
@@ -135,18 +135,18 @@ pip install -U g4f[all]
 ```
 
 How do I install only parts or do disable parts?
-Use partial requirements: [/docs/requirements](/docs/requirements.md)
+Use partial requirements: [/docs/requirements](https://github.com/xtekky/gpt4free/blob/main/docs/requirements.md)
 
 ##### Install from source:
 
 How do I load the project using git and installing the project requirements?
-Read this tutorial and follow it step by step: [/docs/git](/docs/git.md)
+Read this tutorial and follow it step by step: [/docs/git](https://github.com/xtekky/gpt4free/blob/main/docs/git.md)
 
 
 ##### Install using Docker:
 
 How do I build and run composer image from source?
-Use docker-compose: [/docs/docker](/docs/docker.md)
+Use docker-compose: [/docs/docker](https://github.com/xtekky/gpt4free/blob/main/docs/docker.md)
 
 
 ## 💡 Usage
@@ -184,13 +184,13 @@ image_url = response.data[0].url
 ```
 
 
-[![Image with cat](/docs/cat.jpeg)](/docs/client.md)
+[![Image with cat](/docs/cat.jpeg)](https://github.com/xtekky/gpt4free/blob/main/docs/client.md)
 
 **Full Documentation for Python API**
 
-- New AsyncClient API from G4F: [/docs/async_client](/docs/async_client.md)
-- Client API like the OpenAI Python library: [/docs/client](/docs/client.md)
-- Legacy API with python modules: [/docs/legacy](/docs/legacy.md)
+- New AsyncClient API from G4F: [/docs/async_client](https://github.com/xtekky/gpt4free/blob/main/docs/async_client.md)
+- Client API like the OpenAI Python library: [/docs/client](https://github.com/xtekky/gpt4free/blob/main/docs/client.md)
+- Legacy API with python modules: [/docs/legacy](https://github.com/xtekky/gpt4free/blob/main/docs/legacy.md)
 
 #### Web UI
 
@@ -209,7 +209,7 @@ python -m g4f.cli gui -port 8080 -debug
 
 You can use the Interference API to serve other OpenAI integrations with G4F.
 
-See docs: [/docs/interference](/docs/interference.md)
+See docs: [/docs/interference](https://github.com/xtekky/gpt4free/blob/main/docs/interference.md)
 
 Access with: http://localhost:1337/v1
 
@@ -302,10 +302,13 @@ While we wait for gpt-5, here is a list of new models that are at least better t
 
 | Website | Provider |  parameters | better than |
 | ------  | -------  |  ------ |  ------ | 
-| [mixtral-8x22b](https://huggingface.co/mistral-community/Mixtral-8x22B-v0.1) | `g4f.Provider.DeepInfra` | 176B / 44b active | gpt-3.5-turbo |
+| [claude-3-opus](https://anthropic.com/) | `g4f.Provider.You` | ?B | gpt-4-0125-preview |
+| [command-r+](https://txt.cohere.com/command-r-plus-microsoft-azure/) | `g4f.Provider.HuggingChat` | 104B | gpt-4-0314 |
+| [llama-3-70b](https://meta.ai/) | `g4f.Provider.Llama` or `DeepInfra` | 70B | gpt-4-0314 |
+| [claude-3-sonnet](https://anthropic.com/) | `g4f.Provider.You` | ?B | gpt-4-0314 |
+| [reka-core](https://chat.reka.ai/) | `g4f.Provider.Reka` | 21B | gpt-4-vision |
 | [dbrx-instruct](https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm) | `g4f.Provider.DeepInfra` | 132B / 36B active| gpt-3.5-turbo |
-| [command-r+](https://txt.cohere.com/command-r-plus-microsoft-azure/) | `g4f.Provider.HuggingChat` | 104B | gpt-4-0613 |
-
+| [mixtral-8x22b](https://huggingface.co/mistral-community/Mixtral-8x22B-v0.1) | `g4f.Provider.DeepInfra` | 176B / 44b active | gpt-3.5-turbo |
 
 ### GPT-3.5
 
@@ -410,8 +413,23 @@ While we wait for gpt-5, here is a list of new models that are at least better t
 | Gemini API | `g4f.Provider.GeminiPro` | ❌ | gemini-1.5-pro | [ai.google.dev](https://ai.google.dev) |
 | Meta AI | `g4f.Provider.MetaAI` | ✔️ | ❌ | [meta.ai](https://www.meta.ai) |
 | OpenAI ChatGPT | `g4f.Provider.OpenaiChat` | dall-e-3 | gpt-4-vision | [chat.openai.com](https://chat.openai.com) |
+| Reka | `g4f.Provider.Reka` | ❌ | ✔️ | [chat.reka.ai](https://chat.reka.ai/) |
 | Replicate | `g4f.Provider.Replicate` | stability-ai/sdxl| llava-v1.6-34b | [replicate.com](https://replicate.com) |
 | You.com | `g4f.Provider.You` | dall-e-3| ✔️ | [you.com](https://you.com) |
+
+```python
+import requests
+from g4f.client import Client
+
+client = Client()
+image = requests.get("https://change_me.jpg", stream=True).raw
+response = client.chat.completions.create(
+    "",
+    messages=[{"role": "user", "content": "what is in this picture?"}],
+    image=image
+)
+print(response.choices[0].message.content)
+```
 
 ## 🔗 Powered by gpt4free
 
@@ -823,11 +841,11 @@ We welcome contributions from the community. Whether you're adding new providers
 
 ###### Guide: How do i create a new Provider?
 
- - Read: [/docs/guides/create_provider](/docs/guides/create_provider.md)
+ - Read: [/docs/guides/create_provider](https://github.com/xtekky/gpt4free/blob/main/docs/guides/create_provider.md)
 
 ###### Guide: How can AI help me with writing code?
 
- - Read: [/docs/guides/help_me](/docs/guides/help_me.md)
+ - Read: [/docs/guides/help_me](https://github.com/xtekky/gpt4free/blob/main/docs/guides/help_me.md)
 
 ## 🙌 Contributors
 
@@ -841,8 +859,8 @@ A list of all contributors is available [here](https://github.com/xtekky/gpt4fre
 <a href="https://github.com/Commenter123321" target="_blank"><img src="https://avatars.githubusercontent.com/u/36051603?v=4&s=45" width="45" title="Commenter123321"></a>
 <a href="https://github.com/DanielShemesh" target="_blank"><img src="https://avatars.githubusercontent.com/u/20585236?v=4&s=45" width="45" title="DanielShemesh"></a>
 <a href="https://github.com/Luneye" target="_blank"><img src="https://avatars.githubusercontent.com/u/73485421?v=4&s=45" width="45" title="Luneye"></a>
-<a href="https://github.com/enganese" target="_blank"><img src="https://avatars.githubusercontent.com/u/69082498?v=4&s=45" width="45" title="enganese"></a>
 <a href="https://github.com/ezerinz" target="_blank"><img src="https://avatars.githubusercontent.com/u/100193740?v=4&s=45" width="45" title="ezerinz"></a>
+<a href="https://github.com/enganese" target="_blank"><img src="https://avatars.githubusercontent.com/u/69082498?v=4&s=45" width="45" title="enganese"></a>
 <a href="https://github.com/Lin-jun-xiang" target="_blank"><img src="https://avatars.githubusercontent.com/u/63782903?v=4&s=45" width="45" title="Lin-jun-xiang"></a>
 <a href="https://github.com/nullstreak" target="_blank"><img src="https://avatars.githubusercontent.com/u/139914347?v=4&s=45" width="45" title="nullstreak"></a>
 <a href="https://github.com/valerii-chirkov" target="_blank"><img src="https://avatars.githubusercontent.com/u/81074936?v=4&s=45" width="45" title="valerii-chirkov"></a>
@@ -850,16 +868,16 @@ A list of all contributors is available [here](https://github.com/xtekky/gpt4fre
 <a href="https://github.com/repollo" target="_blank"><img src="https://avatars.githubusercontent.com/u/2671466?v=4&s=45" width="45" title="repollo"></a>
 <a href="https://github.com/hpsj" target="_blank"><img src="https://avatars.githubusercontent.com/u/54535414?v=4&s=45" width="45" title="hpsj"></a>
 <a href="https://github.com/taiyi747" target="_blank"><img src="https://avatars.githubusercontent.com/u/63543716?v=4&s=45" width="45" title="taiyi747"></a>
-<a href="https://github.com/ostix360" target="_blank"><img src="https://avatars.githubusercontent.com/u/55257054?v=4&s=45" width="45" title="ostix360"></a>
-<a href="https://github.com/WdR-Tech" target="_blank"><img src="https://avatars.githubusercontent.com/u/143020293?v=4&s=45" width="45" title="WdR-Tech"></a>
-<a href="https://github.com/HexyeDEV" target="_blank"><img src="https://avatars.githubusercontent.com/u/65314629?v=4&s=45" width="45" title="HexyeDEV"></a>
 <a href="https://github.com/9fo" target="_blank"><img src="https://avatars.githubusercontent.com/u/71867245?v=4&s=45" width="45" title="9fo"></a>
-<a href="https://github.com/eltociear" target="_blank"><img src="https://avatars.githubusercontent.com/u/22633385?v=4&s=45" width="45" title="eltociear"></a>
-<a href="https://github.com/ramonvc" target="_blank"><img src="https://avatars.githubusercontent.com/u/13617054?v=4&s=45" width="45" title="ramonvc"></a>
-<a href="https://github.com/naa7" target="_blank"><img src="https://avatars.githubusercontent.com/u/44613678?v=4&s=45" width="45" title="naa7"></a>
-<a href="https://github.com/zeng-rr" target="_blank"><img src="https://avatars.githubusercontent.com/u/47846202?v=4&s=45" width="45" title="zeng-rr"></a>
-<a href="https://github.com/editor-syntax" target="_blank"><img src="https://avatars.githubusercontent.com/u/109844019?v=4&s=45" width="45" title="editor-syntax"></a>
+<a href="https://github.com/HexyeDEV" target="_blank"><img src="https://avatars.githubusercontent.com/u/65314629?v=4&s=45" width="45" title="HexyeDEV"></a>
+<a href="https://github.com/WdR-Tech" target="_blank"><img src="https://avatars.githubusercontent.com/u/143020293?v=4&s=45" width="45" title="WdR-Tech"></a>
+<a href="https://github.com/ostix360" target="_blank"><img src="https://avatars.githubusercontent.com/u/55257054?v=4&s=45" width="45" title="ostix360"></a>
 <a href="https://github.com/devAdityaa" target="_blank"><img src="https://avatars.githubusercontent.com/u/77636021?v=4&s=45" width="45" title="devAdityaa"></a>
+<a href="https://github.com/editor-syntax" target="_blank"><img src="https://avatars.githubusercontent.com/u/109844019?v=4&s=45" width="45" title="editor-syntax"></a>
+<a href="https://github.com/zeng-rr" target="_blank"><img src="https://avatars.githubusercontent.com/u/47846202?v=4&s=45" width="45" title="zeng-rr"></a>
+<a href="https://github.com/naa7" target="_blank"><img src="https://avatars.githubusercontent.com/u/44613678?v=4&s=45" width="45" title="naa7"></a>
+<a href="https://github.com/ramonvc" target="_blank"><img src="https://avatars.githubusercontent.com/u/13617054?v=4&s=45" width="45" title="ramonvc"></a>
+<a href="https://github.com/eltociear" target="_blank"><img src="https://avatars.githubusercontent.com/u/22633385?v=4&s=45" width="45" title="eltociear"></a>
 <a href="https://github.com/kggn" target="_blank"><img src="https://avatars.githubusercontent.com/u/95663228?v=4&s=45" width="45" title="kggn"></a>
 <a href="https://github.com/xiangsx" target="_blank"><img src="https://avatars.githubusercontent.com/u/29322721?v=4&s=45" width="45" title="xiangsx"></a>
 <a href="https://github.com/ggindinson" target="_blank"><img src="https://avatars.githubusercontent.com/u/97807772?v=4&s=45" width="45" title="ggindinson"></a>
@@ -868,12 +886,14 @@ A list of all contributors is available [here](https://github.com/xtekky/gpt4fre
 <img src="https://avatars.githubusercontent.com/u/12299238?s=45&v=4" width="45" title="xqdoo00o">
 <img src="https://avatars.githubusercontent.com/u/97126670?s=45&v=4" width="45" title="nathanrchn">
 <img src="https://avatars.githubusercontent.com/u/81407603?v=4&s=45" width="45" title="dsdanielpark">
+<img src="https://avatars.githubusercontent.com/u/55200481?v=4&s=45" width="45" title="missuo">
 
-- The [`Vercel.py`](g4f/Provider/Vercel.py) file contains code from [vercel-llm-api](https://github.com/ading2210/vercel-llm-api) by [@ading2210](https://github.com/ading2210)
-- The [`har_file.py`](g4f/Provider/openai/har_file.py) has input from [xqdoo00o/ChatGPT-to-API](https://github.com/xqdoo00o/ChatGPT-to-API)
-- The [`PerplexityLabs.py`](g4f/Provider/openai/har_file.py) has input from [nathanrchn/perplexityai](https://github.com/nathanrchn/perplexityai)
-- The [`Gemini.py`](g4f/Provider/needs_auth/Gemini.py) has input from [dsdanielpark/Gemini-API](https://github.com/dsdanielpark/Gemini-API)
-- The [`MetaAI.py`](g4f/Provider/MetaAI.py) file contains code from [meta-ai-api](https://github.com/Strvm/meta-ai-api) by [@Strvm](https://github.com/Strvm)
+- The [`Vercel.py`](https://github.com/xtekky/gpt4free/blob/main/g4f/Provider/Vercel.py) file contains code from [vercel-llm-api](https://github.com/ading2210/vercel-llm-api) by [@ading2210](https://github.com/ading2210)
+- The [`har_file.py`](https://github.com/xtekky/gpt4free/blob/main/g4f/Provider/openai/har_file.py) has input from [xqdoo00o/ChatGPT-to-API](https://github.com/xqdoo00o/ChatGPT-to-API)
+- The [`PerplexityLabs.py`](https://github.com/xtekky/gpt4free/blob/main/g4f/Provider/openai/har_file.py) has input from [nathanrchn/perplexityai](https://github.com/nathanrchn/perplexityai)
+- The [`Gemini.py`](https://github.com/xtekky/gpt4free/blob/main/g4f/Provider/needs_auth/Gemini.py) has input from [dsdanielpark/Gemini-API](https://github.com/dsdanielpark/Gemini-API)
+- The [`MetaAI.py`](https://github.com/xtekky/gpt4free/blob/main/g4f/Provider/MetaAI.py) file contains code from [meta-ai-api](https://github.com/Strvm/meta-ai-api) by [@Strvm](https://github.com/Strvm)
+- The [`proofofwork.py`](https://github.com/xtekky/gpt4free/blob/main/g4f/Provider/openai/proofofwork.py) has input from [missuo/FreeGPT35](https://github.com/missuo/FreeGPT35)
 
 *Having input implies that the AI's code generation utilized it as one of many sources.*
 
@@ -913,7 +933,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
     </td>
     <td> 
       <img src="https://img.shields.io/badge/License-GNU_GPL_v3.0-red.svg"/> <br> 
-This project is licensed under <a href="./LICENSE">GNU_GPL_v3.0</a>.
+This project is licensed under <a href="https://github.com/xtekky/gpt4free/blob/main/LICENSE">GNU_GPL_v3.0</a>.
     </td>
   </tr>
 </table>
